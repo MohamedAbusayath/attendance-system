@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Attendance</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<button id="menu-toggle" aria-label="Toggle menu">☰</button>
+<div class="container">
+
+<div class="sidebar">
+
+<h2>Attendance</h2>
+
+<ul>
+<li><a href="dashboard.html">Dashboard</a></li>
+<li><a href="sites.html">Sites</a></li>
+<li><a href="teams.html">Teams</a></li>
+<li><a href="employees.html">Employees</a></li>
+<li><a href="attendance.html">Attendance</a></li>
+</ul>
+
+</div>
+
+<div class="main">
+
+<h1>Mark Attendance</h1>
+
+<label for="attendanceDate">Date:</label>
+<input type="date" id="attendanceDate" />
+<br /><br />
+<select id="siteSelect"></select>
+<select id="teamSelect"></select>
+
+<button onclick="loadEmployees()">Load Employees</button>
+
+<table border="1" width="100%">
+
+<thead>
+<tr>
+<th>Name</th>
+<th>Present</th>
+</tr>
+</thead>
+
+<tbody id="attendanceTable"></tbody>
+
+</table>
+
+<br>
+
+<button onclick="saveAttendance()">Save Attendance</button>
+
+</div>
+
+</div>
+
+<script>
+// sidebar toggle logic for mobile
+(function(){
+    const btn = document.getElementById('menu-toggle');
+    const sidebar = document.querySelector('.sidebar');
+    if(btn && sidebar){
+        btn.addEventListener('click', ()=> sidebar.classList.toggle('open'));
+        // close when a link is clicked
+        sidebar.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=> sidebar.classList.remove('open')));
+    }
+})();
+</script>
+<script src="js/attendance.js"></script>
+
+</body>
+</html>
