@@ -1,0 +1,6 @@
+/attendance      /attendance.html   200
+/dashboard       /dashboard.html    200
+/employees       /employees.html    200
+/sites           /sites.html        200
+/teams           /teams.html        200
+/*               /index.html        200
