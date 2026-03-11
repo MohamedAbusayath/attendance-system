@@ -1,4 +1,6 @@
-const API_URL = "http://localhost:8080/sites";
+// base URL for API – update when backend moves
+const BASE_URL = "https://attendance-system-7l6a.onrender.com";
+const API_URL = `${BASE_URL}/sites`; 
 
 async function loadSites(){
 

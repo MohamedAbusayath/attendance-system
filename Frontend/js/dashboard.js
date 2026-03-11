@@ -1,6 +1,6 @@
 async function loadDashboard(){
 
-    const response = await fetch("http://localhost:8080/dashboard");
+    const response = await fetch(`${BASE_URL}/dashboard`);
     const data = await response.json();
 
     document.getElementById("totalSites").innerText = data.totalSites;

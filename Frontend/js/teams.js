@@ -1,5 +1,7 @@
-const TEAM_API = "http://localhost:8080/teams";
-const SITE_API = "http://localhost:8080/sites";
+// base URL for API – adjust to deployed host as needed
+const BASE_URL = "https://attendance-system-7l6a.onrender.com";
+const TEAM_API = `${BASE_URL}/teams`;
+const SITE_API = `${BASE_URL}/sites`;
 
 async function loadSites(){
 

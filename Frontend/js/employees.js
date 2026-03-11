@@ -1,5 +1,7 @@
-const EMP_API = "http://localhost:8080/employees";
-const TEAM_API = "http://localhost:8080/teams";
+// base URL for API – update to match deployment
+const BASE_URL = "https://attendance-system-7l6a.onrender.com";
+const EMP_API = `${BASE_URL}/employees`;
+const TEAM_API = `${BASE_URL}/teams`; 
 
 async function loadTeams(){
 
@@ -88,25 +90,6 @@ async function deleteEmployee(id){
     loadEmployees();
 
 }
-async function loadEmployees(teamId) {
 
-  const res = await fetch(`http://localhost:8080/employees/team/${teamId}`);
-
-  if(!res.ok){
-    console.error("API error:", res.status);
-    return;
-  }
-
-  const employees = await res.json();
-
-  if(!Array.isArray(employees)){
-    console.error("Employees is not an array", employees);
-    return;
-  }
-
-  employees.forEach(emp => {
-      console.log(emp.name);
-  });
-}
 loadTeams();
 loadEmployees();
